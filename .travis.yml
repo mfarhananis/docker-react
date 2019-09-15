@@ -4,3 +4,9 @@ services:
 
 before_install:
     - docker build -t mfarhan/docker-react -f Dockerfile.dev .
+
+install:
+    - bundle install
+
+scripts:
+    - docker run mfarhan/docker-react npm run test -- --coverage
